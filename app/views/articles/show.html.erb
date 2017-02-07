@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+<%= render 'defaultView' %>
+
+<div class="container" >
+	<div class="row" style="margin-top : 10px">
+
+		<div class="col-sm-12">
+			<div class="card" style="margin-top : 10px">
+				<div class="card-block">
+					<h4 style="display:inline"> <%= @article.title%> </h4>
+					<i> - <%= time_ago_in_words @article.created_at %> ago </i>
+					<i> - has <%= @article.views %> views </i>
+					<p><h5 class="card-text" ><%= @markdown.render(@article.body).html_safe %></h5></p>
+					<div class="card-footer">
+						<a class="btn btn-primary" href="<%= edit_article_path(@article)%>"> Edit </a>
+
+						<a class="btn btn-primary" <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?'} %> </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="row" style="margin-top : 10px">
+		<div class="col-sm-12">
+			<div class="card" style="margin-top : 10px">
+				<div class="card-block">
+					<h2>Comments</h2>
+					<% @article.comments.each do |comment| %>
+					<b><p style="display:inline"> <%= comment.text %></p></b>
+					<i> - <%= time_ago_in_words comment.created_at %> ago </i>
+					<hr />
+					<%end%>
+				
+					<%= form_for [@article, @article.comments.build] do |f| %>
+					<p><%= f.text_area :text, :size => '40x6' %></p>
+					<p><%= f.submit "Post comment"%></p>
+					<%end%>
+
+
+
+
+					<%= link_to 'Edit', edit_article_path(@article) %> |
+					<%= link_to 'Back', articles_path %>
+					<%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+				</div>
+			</div>

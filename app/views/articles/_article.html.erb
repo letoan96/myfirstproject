@@ -1,0 +1,17 @@
+<div class="card" style="margin-top : 10px">
+  <div class="card-block">
+        <h4 class="card-title" style="display:inline"> <%= link_to article.title, article %> </h4>
+        <i> - <%= time_ago_in_words article.created_at %> ago </i>
+        <p><h5 class="card-text" ><%= @markdown.render(article.body).html_safe %></h5></p>
+        <div class="card-footer">
+        <a class="btn btn-primary" href="<%= edit_article_path(article)%>"> Edit </a>
+
+        <a class="btn btn-primary" <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?'} %> </a>
+        
+        </div>
+        </div>
+        </div>
+
+        <% if @articles.blank? %>
+      <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+        <% end %>

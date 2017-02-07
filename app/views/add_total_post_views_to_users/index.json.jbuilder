@@ -1,0 +1,1 @@
+json.array! @add_total_post_views_to_users, partial: 'add_total_post_views_to_users/add_total_post_views_to_user', as: :add_total_post_views_to_user

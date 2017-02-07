@@ -1,0 +1,2 @@
+class AddTotalPostViewsToUser < ApplicationRecord
+end

@@ -1,0 +1,22 @@
+<%= form_for(add_total_post_views_to_user) do |f| %>
+  <% if add_total_post_views_to_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(add_total_post_views_to_user.errors.count, "error") %> prohibited this add_total_post_views_to_user from being saved:</h2>
+
+      <ul>
+      <% add_total_post_views_to_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :total_post_views %>
+    <%= f.number_field :total_post_views %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.partial! "add_total_post_views_to_users/add_total_post_views_to_user", add_total_post_views_to_user: @add_total_post_views_to_user

@@ -1,0 +1,44 @@
+<div class="container">
+<ul>
+<h1>Toan's Blog</h1>
+<h3> My first Rails application for CoderSchool </h3>
+</ul>
+</div>
+
+<div class="container">
+<nav class="navbar navbar-light bg-faded rounded navbar-toggleable-md" >
+        <a class="navbar-brand" href="#"> Navbar </a>
+
+        <div class="navbar-collapse collapse show" id="containerNavbar" aria-expanded="true">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= articles_path %>">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= new_article_path %>">New article</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+
+          
+          <form class="form-inline my-2 my-md-0">
+             <%= form_tag(articles_path, :method => "get", id: "search-form") do %>
+             <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: 'form-control mr-sm-2' %>
+            <span class="input-group-btn">
+            <%= submit_tag "Search", class: 'btn btn-outline-success my-2 my-sm-0' %>
+            </span>
+            <% end %>
+          </form>
+          
+
+
+    
+
+        
+        
+        
+        </div>
+        </nav>
+        </div>
