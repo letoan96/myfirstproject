@@ -6,7 +6,7 @@ Submitted by: **Le Tran The Toan**
 
 Time spent: **20** hours spent in total
 
-URL: **https://lit-journey-90461.herokuapp.com/ | https://git.heroku.com/lit-journey-90461.git**
+URL: **http://lit-journey-90461.herokuapp.com/articles**
 
 ## User Stories
 
